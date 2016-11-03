@@ -1,0 +1,33 @@
+pattern_name: dysgenesis
+
+classes:
+  dysplastic: PATO:0000640
+  abnormal: PATO:0000460
+
+relations: 
+  inheres_in: RO:0000052
+  qualifier: RO:0002180
+
+vars:
+  entity: "Thing"
+
+name:
+  text: "%s dysplastic"
+  vars:
+   - entity
+
+annotations:
+  - property: oio:hasExactSynonym
+    text: "dysgenesis of the %s"
+    vars:
+     - entity
+
+def:
+  text: "Defective development of the %s."
+  vars:
+    - entity
+
+equivalentTo:
+  text: "'has_part' some ('dysplastic' and 'inheres_in' some %s and 'qualifier' some 'abnormal')"
+  vars:
+    - entity
